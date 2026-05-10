@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useDropzone } from 'react-dropzone';
@@ -15,7 +15,7 @@ const createImage = (url) =>
         const image = new Image();
         image.addEventListener('load', () => resolve(image));
         image.addEventListener('error', (error) => reject(error));
-        image.setAttribute('crossOrigin', 'anonymous'); 
+        image.setAttribute('crossOrigin', 'anonymous');
         image.src = url;
     });
 
@@ -81,9 +81,9 @@ function VideoDropzone({ videoFile, existingUrl, onDrop, onRemove }) {
                     <input {...getInputProps()} />
                     <div className="fs-1 mb-2 text-secondary">📥</div>
                     {isDragActive ? (
-                         <p className="text-primary fw-semibold mb-0">¡Suelta el video aquí!</p>
+                        <p className="text-primary fw-semibold mb-0">¡Suelta el video aquí!</p>
                     ) : (
-                         <p className="text-secondary mb-0">Arrastra y suelta un video aquí, o haz clic para seleccionar</p>
+                        <p className="text-secondary mb-0">Arrastra y suelta un video aquí, o haz clic para seleccionar</p>
                     )}
                     <small className="text-muted mt-2 d-block">(Formatos soportados: MP4, WebM, MOV, AVI, MKV. Max 100MB)</small>
                 </div>
@@ -94,7 +94,7 @@ function VideoDropzone({ videoFile, existingUrl, onDrop, onRemove }) {
 
 function AdminTestimonials() {
     const token = localStorage.getItem('token');
-    const headers = { Authorization: `Bearer ${token}` };
+    const headers = useMemo(() => ({ Authorization: `Bearer ${token}` }), [token]);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [msg, setMsg] = useState(null);
@@ -195,14 +195,14 @@ function AdminTestimonials() {
     const handleSubmit = async e => {
         e.preventDefault();
         setSaving(true); setMsg(null);
-        
+
         const formData = new FormData();
         formData.append('student_name', form.student_name);
         formData.append('course', form.course || '');
         formData.append('rating', form.rating || 5);
         formData.append('content', form.content);
         formData.append('is_published', form.is_published ? '1' : '0');
-        
+
         if (videoFile) {
             formData.append('video', videoFile);
         }
@@ -233,13 +233,13 @@ function AdminTestimonials() {
 
     const handleEdit = item => {
         setEditId(item.id);
-        setForm({ 
-            student_name: item.student_name, 
-            course: item.course || '', 
-            rating: item.rating || 5, 
-            content: item.content, 
+        setForm({
+            student_name: item.student_name,
+            course: item.course || '',
+            rating: item.rating || 5,
+            content: item.content,
             existing_url: item.video_url, // for internal use
-            is_published: item.is_published 
+            is_published: item.is_published
         });
         setVideoFile(null);
         setRemoveVideo(false);
@@ -311,7 +311,7 @@ function AdminTestimonials() {
                                 <label className="form-label fw-semibold">Testimonio (Texto) *</label>
                                 <textarea className="form-control" name="content" rows="4" value={form.content} onChange={handleChange} required></textarea>
                             </div>
-                            
+
                             <div className="col-12">
                                 <label className="form-label fw-semibold">Foto Alumno</label>
                                 <input
@@ -340,11 +340,11 @@ function AdminTestimonials() {
                             </div>
 
                             <div className="col-12 mt-4">
-                                <VideoDropzone 
-                                    videoFile={videoFile} 
-                                    existingUrl={form.existing_url} 
-                                    onDrop={handleVideoDrop} 
-                                    onRemove={handleVideoRemove} 
+                                <VideoDropzone
+                                    videoFile={videoFile}
+                                    existingUrl={form.existing_url}
+                                    onDrop={handleVideoDrop}
+                                    onRemove={handleVideoRemove}
                                 />
                             </div>
 
@@ -396,8 +396,8 @@ function AdminTestimonials() {
                                             </td>
                                             <td>
                                                 <div className="d-flex flex-column gap-1">
-                                                    {t.video_url && t.video_url.startsWith('/storage/') && <span className="badge bg-primary bg-opacity-10 text-primary border border-primary-subtle d-inline-block text-truncate" style={{maxWidth: '120px'}} title="Video Local">🎞️ Video Local</span>}
-                                                    {t.video_url && !t.video_url.startsWith('/storage/') && <span className="badge bg-info bg-opacity-10 text-info border border-info-subtle d-inline-block text-truncate" style={{maxWidth: '120px'}} title="Link Externo">🔗 Link Video</span>}
+                                                    {t.video_url && t.video_url.startsWith('/storage/') && <span className="badge bg-primary bg-opacity-10 text-primary border border-primary-subtle d-inline-block text-truncate" style={{ maxWidth: '120px' }} title="Video Local">🎞️ Video Local</span>}
+                                                    {t.video_url && !t.video_url.startsWith('/storage/') && <span className="badge bg-info bg-opacity-10 text-info border border-info-subtle d-inline-block text-truncate" style={{ maxWidth: '120px' }} title="Link Externo">🔗 Link Video</span>}
                                                     {!t.video_url && <span className="text-muted" style={{ fontSize: '13px' }}>Solo texto</span>}
                                                 </div>
                                             </td>

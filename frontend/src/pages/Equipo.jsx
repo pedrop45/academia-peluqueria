@@ -2,35 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 function Equipo() {
     const API = "http://127.0.0.1:8000";
-    const fallbackTeam = useMemo(
-        () => [
-            {
-                name: "Montserrat González",
-                role: "Directora & Formadora principal",
-                bio: "Especialista en peluquería y barbería. Coordina el plan formativo y guía al alumnado en prácticas reales.",
-                photo: "/assets/img/WhatsApp%20Image%202026-01-27%20at%2009.39.30.jpeg",
-            },
-            {
-                name: "Equipo de Peluquería",
-                role: "Formación práctica",
-                bio: "Acompañamiento en técnicas de corte, color y peinados. Metodología 100% enfocada a resultados.",
-                photo: "/assets/img/grupo.jpeg",
-            },
-            {
-                name: "Área de Estética",
-                role: "Maquillaje & cuidado de la piel",
-                bio: "Formación orientada a maquillaje social, preparación de la piel y asesoramiento de imagen.",
-                photo: "/assets/img/maquillaje.jpg",
-            },
-            {
-                name: "Área de Uñas",
-                role: "Manicura & técnicas avanzadas",
-                bio: "Técnicas actuales, higiene y seguridad. Enfoque práctico con seguimiento personalizado.",
-                photo: "/assets/img/u%C3%B1as.jpg",
-            },
-        ],
-        []
-    );
+
     const [team, setTeam] = useState([]);
     const [loading, setLoading] = useState(true);
     const [errorMsg, setErrorMsg] = useState("");
@@ -56,7 +28,7 @@ function Equipo() {
             mounted = false;
         };
     }, []);
-    const dataToRender = team.length ? team : fallbackTeam;
+    const dataToRender = team;
     const resolvePhoto = (photo) => {
         if (!photo) return "/assets/img/foto%20de%20grupo.jpeg";
 

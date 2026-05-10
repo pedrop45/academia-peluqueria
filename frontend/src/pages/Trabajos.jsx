@@ -12,17 +12,7 @@ function Trabajos() {
         ],
         []
     );
-    const fallbackItems = useMemo(
-        () => [
-            { title: "Recogido elegante", section: "peluqueria", image: "/assets/img/peinado.jpg", featured: true },
-            { title: "Corte y degradado", section: "barberia", image: "/assets/img/barberia.jpg", featured: false },
-            { title: "Diseño de uñas", section: "uñas", image: "/assets/img/u%C3%B1as.jpg", featured: false },
-            { title: "Maquillaje social", section: "maquillaje", image: "/assets/img/maquillaje.jpg", featured: true },
-            { title: "Color y estilo", section: "peluqueria", image: "/assets/img/peluqueria.jpg", featured: false },
-            { title: "Detalle profesional", section: "barberia", image: "/assets/img/barberia%202.jpg", featured: false },
-        ],
-        []
-    );
+
     const [activeSection, setActiveSection] = useState("all");
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -56,10 +46,9 @@ function Trabajos() {
     useEffect(() => {
         fetchGallery(activeSection);
     }, [activeSection]);
-    const dataToRender = items.length ? items : fallbackItems;
     const filtered = activeSection === "all"
-        ? dataToRender
-        : dataToRender.filter((x) => (x.section || "").toLowerCase() === activeSection);
+        ? items
+        : items.filter((x) => (x.section || "").toLowerCase() === activeSection);
     const openModal = (item) => {
         setSelected(item);
         setModalOpen(true);

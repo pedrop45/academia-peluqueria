@@ -8,14 +8,7 @@ function formatDate(d) {
 function Blog() {
     const { data: resp, loading, error } = useFetch(`${API}/blog/posts`);
 
-    const hasData = !loading && !error && (resp?.data?.length > 0);
-    const fallbackPosts = [
-        { id: 1, title: 'Las tendencias en barbería para 2025', excerpt: 'El fade, el drop fade y los diseños geométricos dominan el panorama de la barbería este año. Descubre cómo incorporarlos a tu salón.', category: 'Tendencias', date: '2025-02-10' },
-        { id: 2, title: 'Cómo conseguir el certificado de profesionalidad en peluquería', excerpt: 'Te explicamos paso a paso el proceso para obtener un certificado de profesionalidad oficial, los requisitos y las ventajas laborales que conlleva.', category: 'Formación', date: '2025-01-22' },
-        { id: 3, title: 'Arraigo para formación: cómo obtener el permiso de residencia', excerpt: 'La formación con certificado de profesionalidad abre la puerta al arraigo. Te contamos todo lo que necesitas saber para solicitarlo.', category: 'Legalidad', date: '2025-01-05' },
-        { id: 4, title: 'Entrevista con Montserrat González: 35 años formando profesionales', excerpt: 'La directora de C.E.P. Montserrat González nos habla de la evolución del sector, los retos del futuro y por qué eligió la docencia.', category: 'Academia', date: '2024-12-15' },
-    ];
-    const posts = hasData ? resp.data : fallbackPosts;
+    const posts = resp?.data || [];
     return (
         <div className="container py-5">
             <div className="row">

@@ -2,14 +2,7 @@ import { useFetch } from '../hooks/useFetch';
 const API = 'http://localhost:8000/api';
 function CentrosColaboradores() {
     const { data, loading, error } = useFetch(`${API}/partners`);
-    const hasData = !loading && !error && data?.length > 0;
-    const fallback = [
-        { id: 1, name: 'Salones Marengo', city: 'Almería', type: 'Salón de peluquería' },
-        { id: 2, name: 'Barbería El Elegante', city: 'Adra', type: 'Barbería' },
-        { id: 3, name: 'Centro de Estética Luxe', city: 'Almería', type: 'Centro de estética' },
-        { id: 4, name: 'Academia Belleza Sur', city: 'Granada', type: 'Academia' },
-    ];
-    const centers = hasData ? data : fallback;
+    const centers = data || [];
     return (
         <div className="container py-5">
             <div className="text-center mb-5">

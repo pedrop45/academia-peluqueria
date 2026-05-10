@@ -57,15 +57,7 @@ function TestimonialVideo({ url }) {
 }
 function Testimonios() {
     const { data, loading, error } = useFetch(`${API}/testimonials`);
-    const fallback = [
-        { id: 1, name: 'Laura M.', text: 'El mejor curso de peluquería que he hecho. Montserrat es una profesora increíble, muy cercana y con muchísima experiencia.', rating: 5, course: 'Peluquería Nivel 2' },
-        { id: 2, name: 'Alejandro P.', text: 'Gracias a la academia conseguí trabajo en menos de un mes. La formación de barbería es muy completa y práctica desde el primer día.', rating: 5, course: 'Barbería Profesional' },
-        { id: 3, name: 'Sofía R.', text: 'Lo recomiendo 100%. El certificado de profesionalidad SSCE0110 me permitió impartir clases en otras academias.', rating: 5, course: 'Certificado SSCE0110' },
-        { id: 4, name: 'Marta G.', text: 'Hice el curso de maquillaje online y quedé muy satisfecha. Los materiales son excelentes y el seguimiento por parte del equipo, insuperable.', rating: 4, course: 'Técnicas de Maquillaje' },
-        { id: 5, name: 'Carlos T.', text: 'La academia tiene un ambiente muy profesional. Las instalaciones son modernas y los profesores están muy cualificados.', rating: 5, course: 'Peluquería Nivel 1' },
-        { id: 6, name: 'Ana L.', text: 'Vine de fuera de Almería para hacer el curso y mereció la pena cada kilómetro. Formación de calidad a un precio muy accesible.', rating: 5, course: 'Barbería Profesional' },
-    ];
-    const testimonials = (!loading && !error && data?.length > 0) ? data : fallback;
+    const testimonials = data || [];
     return (
         <div className="container py-5">
             <div className="text-center mb-5">
