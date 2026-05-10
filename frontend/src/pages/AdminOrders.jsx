@@ -29,7 +29,7 @@ function AdminOrders() {
         axios.get(`${API}/admin/orders?${params}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
-            .then(res => setOrders(res.data))
+            .then(res => setOrders(res.data.data ? res.data.data : (Array.isArray(res.data) ? res.data : [])))
             .catch(err => {
                 if (err.response?.status === 401) navigate('/admin');
             })
@@ -119,9 +119,9 @@ function AdminOrders() {
                                                 <small className="text-muted">{order.buyer_email}</small>
                                             </td>
                                             <td>
-                                                {order.courses?.map(c => (
-                                                    <div key={c.id} className="small text-muted">
-                                                        • {c.title}
+                                                {order.items?.map(item => (
+                                                    <div key={item.id} className="small text-muted">
+                                                        • {item.course?.title || 'Curso'}
                                                     </div>
                                                 ))}
                                             </td>
@@ -174,10 +174,10 @@ function AdminOrders() {
                                     {new Date(selectedOrder.created_at).toLocaleString('es-ES')}
                                 </p>
                                 <h6 className="fw-bold mb-2">Cursos comprados</h6>
-                                {selectedOrder.courses?.map(c => (
-                                    <div key={c.id} className="d-flex justify-content-between mb-1 small">
-                                        <span>{c.title}</span>
-                                        <span className="fw-semibold">{parseFloat(c.price).toFixed(2)} €</span>
+                                {selectedOrder.items?.map(item => (
+                                    <div key={item.id} className="d-flex justify-content-between mb-1 small">
+                                        <span>{item.course?.title || 'Curso'}</span>
+                                        <span className="fw-semibold">{parseFloat(item.price || 0).toFixed(2)} €</span>
                                     </div>
                                 ))}
                                 <hr />
