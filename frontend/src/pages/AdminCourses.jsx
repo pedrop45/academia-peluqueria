@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Cropper from 'react-easy-crop';
-const API = 'http://127.0.0.1:8000/api';
-const BASE = 'http://127.0.0.1:8000';
+const API = '/api';
+const BASE = '';
 const createImage = (url) =>
     new Promise((resolve, reject) => {
         const image = new Image();

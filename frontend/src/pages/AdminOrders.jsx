@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AdminShell } from '../components/AdminShell';
 import axios from 'axios';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 const STATUS_LABELS = {
     pending: { label: 'Pendiente', color: '#856404', bg: '#fff3cd' },
     paid: { label: 'Pagado', color: '#0a3622', bg: '#d1e7dd' },

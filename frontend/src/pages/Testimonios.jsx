@@ -1,6 +1,6 @@
 import { useFetch } from '../hooks/useFetch';
-const API = 'http://localhost:8000/api';
-const BACKEND = 'http://localhost:8000';
+const API = '/api';
+const BACKEND = '';
 function StarRating({ n = 5 }) {
     return <span style={{ color: '#c9a24d' }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
 }

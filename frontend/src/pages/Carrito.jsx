@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
-const BASE = 'http://localhost:8000';
+const BASE = '';
 
 const resolveImageUrl = (img) => {
     if (!img) return null;
@@ -13,7 +13,7 @@ const resolveImageUrl = (img) => {
 function Carrito() {
     const { cart, removeFromCart, clearCart, cartTotal } = useCart();
     const navigate = useNavigate();
-    const API = 'http://localhost:8000/api';
+    const API = '/api';
     return (
         <div className="container py-5" style={{ minHeight: '60vh' }}>
             <h1 className="fw-bold mb-1" style={{ color: '#3b2e12' }}>

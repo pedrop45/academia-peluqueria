@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function MisCursos() {
     const navigate = useNavigate();
     const [courses, setCourses] = useState([]);

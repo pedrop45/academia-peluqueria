@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import Cropper from 'react-easy-crop';
 import { AdminShell, API } from '../components/AdminShell';
 
-const BASE = 'http://127.0.0.1:8000';
+const BASE = '';
 
 const createImage = (url) =>
     new Promise((resolve, reject) => {

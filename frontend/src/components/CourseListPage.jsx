@@ -3,8 +3,8 @@ import { useFetch } from '../hooks/useFetch';
 import { useCart } from '../context/CartContext';
 import { useState } from 'react';
 
-const API = 'http://127.0.0.1:8000/api';
-const BASE = 'http://127.0.0.1:8000';
+const API = '/api';
+const BASE = '';
 
 const prettyCategory = (cat) => {
     const map = {

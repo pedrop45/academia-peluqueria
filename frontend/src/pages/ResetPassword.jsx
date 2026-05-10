@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const API = 'http://localhost:8000/api';
+const API = '/api';
 
 function ResetPassword() {
     const [searchParams] = useSearchParams();

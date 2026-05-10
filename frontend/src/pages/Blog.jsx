@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function formatDate(d) {
     if (!d) return '';
     return new Date(d).toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' });

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function BolsaEmpleo() {
     const { data: resp, loading, error } = useFetch(`${API}/jobs/candidates`);
     const hasData = !loading && !error && resp?.data?.length > 0;

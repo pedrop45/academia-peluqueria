@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function Checkout() {
     const { cart, cartTotal, clearCart } = useCart();
     const navigate = useNavigate();

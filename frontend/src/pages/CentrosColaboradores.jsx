@@ -1,5 +1,5 @@
 import { useFetch } from '../hooks/useFetch';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function CentrosColaboradores() {
     const { data, loading, error } = useFetch(`${API}/partners`);
     const centers = data || [];

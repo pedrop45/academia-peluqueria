@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function AccesoAlumnos() {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();

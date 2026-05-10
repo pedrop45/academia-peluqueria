@@ -5,8 +5,8 @@ import { useDropzone } from 'react-dropzone';
 import Cropper from 'react-easy-crop';
 import { AdminShell, API } from '../components/AdminShell';
 
-const BACKEND = 'http://localhost:8000';
-const BASE = 'http://127.0.0.1:8000';
+const BACKEND = '';
+const BASE = '';
 
 const EMPTY = { student_name: '', course: '', rating: 5, content: '', is_published: true };
 

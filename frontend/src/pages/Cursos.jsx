@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useCart } from '../context/CartContext';
-const API = 'http://localhost:8000/api';
-const BASE = 'http://localhost:8000';
+const API = '/api';
+const BASE = '';
 const resolveImageUrl = (img) => {
     if (!img) return null;
     if (img.startsWith('http')) return img;

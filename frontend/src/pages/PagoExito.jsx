@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function PagoExito() {
     const [searchParams] = useSearchParams();
     const [status, setStatus] = useState('loading'); 

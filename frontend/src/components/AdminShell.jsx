@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 export function AdminShell({ title, msg, children }) {
     const token = localStorage.getItem('token');
     if (!token) {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-const API = 'http://localhost:8000/api';
+const API = '/api';
 function AdminLogin() {
     const navigate = useNavigate();
     const [form, setForm] = useState({ email: '', password: '' });

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AdminShell, API } from '../components/AdminShell';
 
-const BACKEND = 'http://localhost:8000';
+const BACKEND = '';
 const EMPTY = { title: '', section: '', featured: false, active: true };
 
 function AdminGallery() {

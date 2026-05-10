@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 function Equipo() {
-    const API = "http://127.0.0.1:8000";
+    const API = "";
 
     const [team, setTeam] = useState([]);
     const [loading, setLoading] = useState(true);
