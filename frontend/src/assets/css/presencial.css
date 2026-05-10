@@ -1,0 +1,199 @@
+
+  :root{
+    --bg: #ffffff;
+    --panel: #111111;
+    --text: #111111;
+    --muted: #3b3b3b;
+    --gold: #c9a24d;
+    --wrap: 1100px;
+    --radius: 18px;
+    --img-h: 280px;
+    --shadow-sm: 0 8px 18px rgba(0,0,0,.08);
+    --shadow-md: 0 18px 40px rgba(0,0,0,.12);
+    --border: rgba(0,0,0,.08);
+  }
+  *, *::before, *::after{
+    box-sizing: border-box;
+  }
+  html,body{
+    height: 100%;
+  }
+  body{
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background:
+      radial-gradient(900px 420px at 20% 0%, rgba(201,162,77,.14), transparent 60%),
+      radial-gradient(900px 420px at 85% 10%, rgba(17,17,17,.06), transparent 55%),
+      var(--bg);
+  }
+  img{
+    width: 100%;
+    height: var(--img-h);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .l-wrap{
+    width: min(var(--wrap), calc(100% - 2rem));
+    margin: 0 auto;
+  }
+  .l-section{
+    padding: 2.2rem 0;
+  }
+  .l-section--alt{
+    background: linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.015));
+    border-block: 1px solid rgba(0,0,0,.06);
+  }
+  .l-grid{
+    display: grid;
+    gap: 1.25rem;
+  }
+  .c-heading{
+    margin: 0 0 1rem;
+    color: #3b2e12;
+    font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+    font-weight: 950;
+    letter-spacing: .2px;
+  }
+  .c-subheading{
+    margin: 0 0 .5rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--text);
+  }
+  .t-muted{
+    color: var(--muted);
+  }
+  .t-small{
+    font-size: .95rem;
+  }
+  .c-topbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(17,17,17,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+  .c-topbar__title{
+    margin: 0;
+    padding: 1.05rem 0;
+    text-align: center;
+    color: var(--gold);
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    letter-spacing: .35px;
+  }
+  .c-topbar__subtitle{
+    display:block;
+    margin-top: .2rem;
+    font-size: .92em;
+    color: rgba(255,255,255,.74);
+    font-weight: 600;
+  }
+  .c-card{
+    background: rgba(255,255,255,.95);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .c-card--lift{
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .c-card--lift:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .c-dark{
+    background: var(--panel);
+    color: rgba(255,255,255,.9);
+  }
+  .c-dark p{
+    color: rgba(255,255,255,.86);
+  }
+  .c-hero{
+    padding: 2.4rem 0 1.2rem;
+  }
+  .c-hero__grid{
+    display: grid;
+    gap: 1.4rem;
+    align-items: center;
+  }
+  .c-hero__kicker{
+    margin: 0 0 .5rem;
+    font-weight: 950;
+    color: #3b2e12;
+    font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  }
+  .c-hero__lead{
+    margin: 0 0 .75rem;
+    font-weight: 800;
+    color: var(--muted);
+  }
+  .c-list{
+    margin: .75rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+  }
+  .c-list li{
+    margin: .25rem 0;
+  }
+  .c-actions{
+    margin-top: .9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    align-items: center;
+  }
+  .c-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .65rem .95rem;
+    border-radius: 999px;
+    border: 1px solid rgba(201,162,77,.40);
+    background: rgba(201,162,77,.10);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: .2px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.20);
+  }
+  .c-btn:hover{
+    background: rgba(201,162,77,.16);
+  }
+  .c-btn:focus-visible{
+    outline: 3px solid rgba(201,162,77,.55);
+    outline-offset: 3px;
+  }
+  .c-btn--ghost{
+    background: transparent;
+    border-color: rgba(255,255,255,.22);
+  }
+  .c-btn--ghost:hover{
+    background: rgba(255,255,255,.06);
+  }
+  .c-footer{
+    padding: 1.25rem 0;
+    background: var(--panel);
+    color: rgba(255,255,255,.75);
+    border-top: 1px solid rgba(255,255,255,.10);
+    text-align: center;
+    font-size: .9rem;
+  }
+  @media (min-width: 900px){
+    :root{
+      --img-h: 340px;
+    }
+    .c-hero__grid{
+      grid-template-columns: 1.15fr .85fr;
+    }
+    .l-grid--two{
+      grid-template-columns: 1.15fr .85fr;
+    }
+  }
+  

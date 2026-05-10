@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: block;        min-height: 100%;
+  background: #fff;
+  color: #111;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #c9a24d !important;
+  transition: color .15s ease;
+}
+
+.navbar .nav-link.active {
+  color: #c9a24d !important;
+  border-bottom: 2px solid #c9a24d;
+}
+
+.navbar .dropdown-toggle:hover,
+.navbar .dropdown-toggle:focus {
+  color: #c9a24d !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: rgba(201, 162, 77, .15) !important;
+  color: #c9a24d !important;
+}
+
+.dropdown-menu .dropdown-item.active {
+  background-color: rgba(201, 162, 77, .2) !important;
+  color: #c9a24d !important;
+}

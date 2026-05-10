@@ -1,0 +1,24 @@
+# Ignorar directorios y archivos de entorno
+.env
+.env.backup
+.idea/
+.vscode/
+node_modules/
+vendor/
+.DS_Store
+
+# Archivos de la base de datos local (por seguridad)
+*.sqlite
+*.sqlite3
+backend/database/database.sqlite
+
+# Archivos de build y temporales
+frontend/dist/
+backend/public/build/
+backend/storage/*.key
+backend/storage/logs/*.log
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+tmp_tools/
+docs/

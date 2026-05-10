@@ -1,0 +1,128 @@
+﻿[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 148 modules transformed.
+node.exe : 
+[31mÔ£ù[39m Build 
+failed in 811ms
+En línea: 1 Carácter: 1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([31mÔ£ù[39m   
+  Build failed in 8    
+11ms:String) [], R    
+emoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+[31merror during 
+build:
+[31msrc/pages/AdminOrd
+ers.jsx (3:7): 
+"default" is not 
+exported by "src/compon
+ents/AdminShell.jsx", 
+imported by "src/pages/
+AdminOrders.jsx".[31m
+file: [36mC:/Users/sie
+mp/Desktop/TFG DAW/acad
+emia-peluqueria/fronten
+d/src/pages/AdminOrders
+.jsx:3:7[31m
+[33m
+1: import { useEffect, 
+useState } from 
+'react';
+2: import { 
+useNavigate } from 
+'react-router-dom';
+3: import AdminShell 
+from '../components/Adm
+inShell';
+          ^
+4: import axios from 
+'axios';
+[31m
+    at getRollupError (
+file:///C:/Users/siemp/
+Desktop/TFG%20DAW/acade
+mia-peluqueria/frontend
+/node_modules/rollup/di
+st/es/shared/parseAst.j
+s:402:41)
+    at error (file:///C
+:/Users/siemp/Desktop/T
+FG%20DAW/academia-peluq
+ueria/frontend/node_mod
+ules/rollup/dist/es/sha
+red/parseAst.js:398:42)
+    at Module.error (fi
+le:///C:/Users/siemp/De
+sktop/TFG%20DAW/academi
+a-peluqueria/frontend/n
+ode_modules/rollup/dist
+/es/shared/node-entry.j
+s:17040:16)
+    at 
+Module.traceVariable (f
+ile:///C:/Users/siemp/D
+esktop/TFG%20DAW/academ
+ia-peluqueria/frontend/
+node_modules/rollup/dis
+t/es/shared/node-entry.
+js:17452:29)
+    at ModuleScope.find
+Variable (file:///C:/Us
+ers/siemp/Desktop/TFG%2
+0DAW/academia-peluqueri
+a/frontend/node_modules
+/rollup/dist/es/shared/
+node-entry.js:15070:39)
+    at FunctionScope.fi
+ndVariable (file:///C:/
+Users/siemp/Desktop/TFG
+%20DAW/academia-peluque
+ria/frontend/node_modul
+es/rollup/dist/es/share
+d/node-entry.js:5673:38
+)
+    at FunctionBodyScop
+e.findVariable (file://
+/C:/Users/siemp/Desktop
+/TFG%20DAW/academia-pel
+uqueria/frontend/node_m
+odules/rollup/dist/es/s
+hared/node-entry.js:567
+3:38)
+    at Identifier.bind 
+(file:///C:/Users/siemp
+/Desktop/TFG%20DAW/acad
+emia-peluqueria/fronten
+d/node_modules/rollup/d
+ist/es/shared/node-entr
+y.js:5447:40)
+    at 
+CallExpression.bind (fi
+le:///C:/Users/siemp/De
+sktop/TFG%20DAW/academi
+a-peluqueria/frontend/n
+ode_modules/rollup/dist
+/es/shared/node-entry.j
+s:2825:28)
+    at 
+CallExpression.bind (fi
+le:///C:/Users/siemp/De
+sktop/TFG%20DAW/academi
+a-peluqueria/frontend/n
+ode_modules/rollup/dist
+/es/shared/node-entry.j
+s:12179:15)[39m
