@@ -205,7 +205,7 @@ function Contacto() {
                                     </button>
                                     <a
                                         className="btn btn-outline-success"
-                                        href="https://wa.me/34600000000"
+                                        href="https://wa.me/34667287533"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -224,12 +224,12 @@ function Contacto() {
                             <div className="mb-3">
                                 <div className="fw-semibold">Dirección</div>
                                 <div className="text-muted">
-                                    Calle Ejemplo 123, 04000 Almería
+                                    C. Pablo Ruiz Picasso, 17, 04005 Almería
                                 </div>
                             </div>
                             <div className="mb-3">
                                 <div className="fw-semibold">Teléfono</div>
-                                <div className="text-muted">+34 600 000 000</div>
+                                <div className="text-muted">+34 667 28 75 33</div>
                             </div>
                             <div className="mb-3">
                                 <div className="fw-semibold">Email</div>
@@ -260,7 +260,7 @@ function Contacto() {
                         <div className="card-body p-0">
                             <iframe
                                 title="Mapa"
-                                src="https://www.google.com/maps?q=Almer%C3%ADa&output=embed"
+                                src="https://www.google.com/maps?q=C.+Pablo+Ruiz+Picasso,+17,+04005+Almer%C3%ADa&output=embed"
                                 width="100%"
                                 height="320"
                                 style={{ border: 0, borderRadius: "0.5rem" }}
@@ -270,9 +270,6 @@ function Contacto() {
                             />
                         </div>
                     </div>
-                    <p className="small text-muted mt-3">
-                        * Los datos de contacto son de ejemplo. Sustitúyelos por los reales de la academia.
-                    </p>
                 </div>
             </div>
         </div>
